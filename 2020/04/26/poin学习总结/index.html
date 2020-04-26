@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="POIN平台学习总结目录 POIN平台学习总结… 1 1. 前言… 1 2. 技术特点… 1 2.1基础架构… 1 2.2服务部署… 2 3.后端开发注意事项… 2 3.1日志… 2 3.2事务… 2 3.3 异常… 2 3.4 数据访问规范… 2 3.5 方法上的注解… 2 3.6其他注意事项… 3 4.前端… 3 1.  前言由于我目前无VPN账号，无法进入内部系统查看文档与ppt，所以总结基">
 <meta property="og:type" content="article">
-<meta property="og:title" content="blog搭建流程">
-<meta property="og:url" content="https://zhaoshanhhe.github.io.git/2020/04/22/hero%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:title" content="Poin学习总结">
+<meta property="og:url" content="https://zhaoshanhhe.github.io.git/2020/04/26/poin%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="shzhao&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="POIN平台学习总结目录 POIN平台学习总结… 1 1. 前言… 1 2. 技术特点… 1 2.1基础架构… 1 2.2服务部署… 2 3.后端开发注意事项… 2 3.1日志… 2 3.2事务… 2 3.3 异常… 2 3.4 数据访问规范… 2 3.5 方法上的注解… 2 3.6其他注意事项… 3 4.前端… 3 1.  前言由于我目前无VPN账号，无法进入内部系统查看文档与ppt，所以总结基">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-22T01:55:20.685Z">
-<meta property="article:modified_time" content="2020-04-22T03:50:08.092Z">
+<meta property="article:published_time" content="2020-04-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-26T12:53:50.332Z">
 <meta property="article:author" content="ShanHe Zhao">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://ZhaoshanhHe.github.io.git/2020/04/22/hero搭建流程/"/>
+  <link rel="canonical" href="https://ZhaoshanhHe.github.io.git/2020/04/26/poin学习总结/"/>
 
 
 
 
 
-  <title>blog搭建流程 | shzhao's blog</title>
+  <title>Poin学习总结 | shzhao's blog</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ZhaoshanhHe.github.io.git/2020/04/22/hero%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://ZhaoshanhHe.github.io.git/2020/04/26/poin%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShanHe Zhao">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">blog搭建流程</h1>
+          <h1 class="post-title" itemprop="name headline">Poin学习总结</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-22T09:55:20+08:00">
-                2020-04-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">
+                2020-04-26
               </time>
             
 
@@ -329,19 +329,40 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="POIN平台学习总结"><a href="#POIN平台学习总结" class="headerlink" title="POIN平台学习总结"></a>POIN平台学习总结</h1><p>目录</p>
+<p><a href="#_Toc38818127">POIN平台学习总结… 1</a></p>
+<p><a href="#_Toc38818128">1. 前言… 1</a></p>
+<p><a href="#_Toc38818129">2. 技术特点… 1</a></p>
+<p><a href="#_Toc38818130">2.1基础架构… 1</a></p>
+<p><a href="#_Toc38818131">2.2服务部署… 2</a></p>
+<p><a href="#_Toc38818132">3.后端开发注意事项… 2</a></p>
+<p><a href="#_Toc38818133">3.1日志… 2</a></p>
+<p><a href="#_Toc38818134">3.2事务… 2</a></p>
+<p><a href="#_Toc38818135">3.3 异常… 2</a></p>
+<p><a href="#_Toc38818136">3.4 数据访问规范… 2</a></p>
+<p><a href="#_Toc38818137">3.5 方法上的注解… 2</a></p>
+<p><a href="#_Toc38818138">3.6其他注意事项… 3</a></p>
+<p><a href="#_Toc38818139">4.前端… 3</a></p>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.  前言"></a>1.  前言</h2><p>由于我目前无VPN账号，无法进入内部系统查看文档与ppt，所以总结基于自己的记忆与理解，有偏差请大家多多交流。</p>
+<h2 id="2-技术特点"><a href="#2-技术特点" class="headerlink" title="2.  技术特点"></a>2.  技术特点</h2><h3 id="2-1基础架构"><a href="#2-1基础架构" class="headerlink" title="2.1基础架构"></a>2.1基础架构</h3><p> 前后台分离，基于Springboot与以vue为基准修改的前端框架ElementUI，采用目前流行的微服务架构，持久层框架基于Mybatis与Hibernate进行封装，可调用其中的封装方法，或者自己编写sql，也可在oracle，mysql中切换使用。</p>
+<h3 id="2-2服务部署"><a href="#2-2服务部署" class="headerlink" title="2.2服务部署"></a>2.2服务部署</h3><p> 为防止不兼容poin开发工具，Maven，jdk1.8，tomcat9必须选择为32位，开发完成后，maven打包即可，上线服务器使用weblogic，不是很了解，不多阐述。</p>
+<h2 id="3-后端开发注意事项"><a href="#3-后端开发注意事项" class="headerlink" title="3.后端开发注意事项"></a>3.后端开发注意事项</h2><h3 id="3-1日志"><a href="#3-1日志" class="headerlink" title="3.1日志"></a>3.1日志</h3><p>使用log4j，创建配置文件，设定日志输出等级即可，与平时使用步骤一致。</p>
+<h3 id="3-2事务"><a href="#3-2事务" class="headerlink" title="3.2事务"></a>3.2事务</h3><p>使用@Transactional注解，但注意只有来自外部的请求才能被aop捕捉拦截，内部调用不会启动事务。</p>
+<h3 id="3-3-异常"><a href="#3-3-异常" class="headerlink" title="3.3 异常"></a>3.3 异常</h3><p>一般手动throw抛出自定义异常，需要自定义errCode 与 自定义errMsg或者直接返回json格式为｛“errCode”:””,” errMsg”:””｝，需要注意返回异常到前端会弹框，noAlert可设置为不弹框。</p>
+<h3 id="3-4-数据访问规范"><a href="#3-4-数据访问规范" class="headerlink" title="3.4 数据访问规范"></a>3.4 数据访问规范</h3><p>推荐使用Mybatis，可创建mapper.xml来自定义sql，常用方法封装在ICommonDAO 。如果使用Hibernate使用hibernateTemplate，其中有封装常用方法。如果需要打印sql 则在logger中配置对应实现类，level级别设为debug。</p>
+<h3 id="3-5-方法上的注解"><a href="#3-5-方法上的注解" class="headerlink" title="3.5 方法上的注解"></a>3.5 方法上的注解</h3><p>@consumes @produces注解为application=json，设定返回值为json。 </p>
+<p>@path注解写映射地址。</p>
+<p>@get @post可限定请求方式 参数上加注解。</p>
+<p>@pathparam 可取到路径上的传参 @queryparam 用于查询时传参。</p>
+<p>分页方法上@GenericType注解参数写需要返回的BO类 用于辅助导出json。</p>
+<h3 id="3-6其他注意事项"><a href="#3-6其他注意事项" class="headerlink" title="3.6其他注意事项"></a>3.6其他注意事项</h3><p>如果不需要返回值 接口可返回response.ok().build()或返回固定的json格式 禁止返回null。</p>
+<p>批量更新删除 可调用封装的batch方法。</p>
+<p>树结构 一般用于前端显示主菜单子菜单，字段有 id parentid text，如果使用 oracle可用递归查询。</p>
+<p>登录后session获取，使用@context注解，注入request对象获取session。</p>
+<p>redis.spring.xml 配置redis，其中可配置连接池 工厂配置 redistemplate配置 哨兵 集群或者单机模式。</p>
+<p>Postman可用于测试接口。</p>
+<p>前后端文档设计基于swagger。</p>
+<h2 id="4-前端"><a href="#4-前端" class="headerlink" title="4.前端"></a>4.前端</h2><p>  不了解前端技术，期待大家的分享。</p>
 
       
     </div>
@@ -374,15 +395,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/04/22/My-First-Post/" rel="next" title="My First Post">
+                <i class="fa fa-chevron-left"></i> My First Post
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/22/My-First-Post/" rel="prev" title="My First Post">
-                My First Post <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#POIN平台学习总结"><span class="nav-number">1.</span> <span class="nav-text">POIN平台学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-number">1.1.</span> <span class="nav-text">1.  前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-技术特点"><span class="nav-number">1.2.</span> <span class="nav-text">2.  技术特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1基础架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1基础架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2服务部署"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2服务部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-后端开发注意事项"><span class="nav-number">1.3.</span> <span class="nav-text">3.后端开发注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1日志"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2事务"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-异常"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-数据访问规范"><span class="nav-number">1.3.4.</span> <span class="nav-text">3.4 数据访问规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-方法上的注解"><span class="nav-number">1.3.5.</span> <span class="nav-text">3.5 方法上的注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6其他注意事项"><span class="nav-number">1.3.6.</span> <span class="nav-text">3.6其他注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-前端"><span class="nav-number">1.4.</span> <span class="nav-text">4.前端</span></a></li></ol></li></ol></div>
             
 
           </div>

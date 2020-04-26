@@ -261,6 +261,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ZhaoshanhHe.github.io.git/2020/04/26/poin%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShanHe Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shzhao's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/26/poin%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" itemprop="url">Poin学习总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">
+                2020-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="POIN平台学习总结"><a href="#POIN平台学习总结" class="headerlink" title="POIN平台学习总结"></a>POIN平台学习总结</h1><p>目录</p>
+<p><a href="#_Toc38818127">POIN平台学习总结… 1</a></p>
+<p><a href="#_Toc38818128">1. 前言… 1</a></p>
+<p><a href="#_Toc38818129">2. 技术特点… 1</a></p>
+<p><a href="#_Toc38818130">2.1基础架构… 1</a></p>
+<p><a href="#_Toc38818131">2.2服务部署… 2</a></p>
+<p><a href="#_Toc38818132">3.后端开发注意事项… 2</a></p>
+<p><a href="#_Toc38818133">3.1日志… 2</a></p>
+<p><a href="#_Toc38818134">3.2事务… 2</a></p>
+<p><a href="#_Toc38818135">3.3 异常… 2</a></p>
+<p><a href="#_Toc38818136">3.4 数据访问规范… 2</a></p>
+<p><a href="#_Toc38818137">3.5 方法上的注解… 2</a></p>
+<p><a href="#_Toc38818138">3.6其他注意事项… 3</a></p>
+<p><a href="#_Toc38818139">4.前端… 3</a></p>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.  前言"></a>1.  前言</h2><p>由于我目前无VPN账号，无法进入内部系统查看文档与ppt，所以总结基于自己的记忆与理解，有偏差请大家多多交流。</p>
+<h2 id="2-技术特点"><a href="#2-技术特点" class="headerlink" title="2.  技术特点"></a>2.  技术特点</h2><h3 id="2-1基础架构"><a href="#2-1基础架构" class="headerlink" title="2.1基础架构"></a>2.1基础架构</h3><p> 前后台分离，基于Springboot与以vue为基准修改的前端框架ElementUI，采用目前流行的微服务架构，持久层框架基于Mybatis与Hibernate进行封装，可调用其中的封装方法，或者自己编写sql，也可在oracle，mysql中切换使用。</p>
+<h3 id="2-2服务部署"><a href="#2-2服务部署" class="headerlink" title="2.2服务部署"></a>2.2服务部署</h3><p> 为防止不兼容poin开发工具，Maven，jdk1.8，tomcat9必须选择为32位，开发完成后，maven打包即可，上线服务器使用weblogic，不是很了解，不多阐述。</p>
+<h2 id="3-后端开发注意事项"><a href="#3-后端开发注意事项" class="headerlink" title="3.后端开发注意事项"></a>3.后端开发注意事项</h2><h3 id="3-1日志"><a href="#3-1日志" class="headerlink" title="3.1日志"></a>3.1日志</h3><p>使用log4j，创建配置文件，设定日志输出等级即可，与平时使用步骤一致。</p>
+<h3 id="3-2事务"><a href="#3-2事务" class="headerlink" title="3.2事务"></a>3.2事务</h3><p>使用@Transactional注解，但注意只有来自外部的请求才能被aop捕捉拦截，内部调用不会启动事务。</p>
+<h3 id="3-3-异常"><a href="#3-3-异常" class="headerlink" title="3.3 异常"></a>3.3 异常</h3><p>一般手动throw抛出自定义异常，需要自定义errCode 与 自定义errMsg或者直接返回json格式为｛“errCode”:””,” errMsg”:””｝，需要注意返回异常到前端会弹框，noAlert可设置为不弹框。</p>
+<h3 id="3-4-数据访问规范"><a href="#3-4-数据访问规范" class="headerlink" title="3.4 数据访问规范"></a>3.4 数据访问规范</h3><p>推荐使用Mybatis，可创建mapper.xml来自定义sql，常用方法封装在ICommonDAO 。如果使用Hibernate使用hibernateTemplate，其中有封装常用方法。如果需要打印sql 则在logger中配置对应实现类，level级别设为debug。</p>
+<h3 id="3-5-方法上的注解"><a href="#3-5-方法上的注解" class="headerlink" title="3.5 方法上的注解"></a>3.5 方法上的注解</h3><p>@consumes @produces注解为application=json，设定返回值为json。 </p>
+<p>@path注解写映射地址。</p>
+<p>@get @post可限定请求方式 参数上加注解。</p>
+<p>@pathparam 可取到路径上的传参 @queryparam 用于查询时传参。</p>
+<p>分页方法上@GenericType注解参数写需要返回的BO类 用于辅助导出json。</p>
+<h3 id="3-6其他注意事项"><a href="#3-6其他注意事项" class="headerlink" title="3.6其他注意事项"></a>3.6其他注意事项</h3><p>如果不需要返回值 接口可返回response.ok().build()或返回固定的json格式 禁止返回null。</p>
+<p>批量更新删除 可调用封装的batch方法。</p>
+<p>树结构 一般用于前端显示主菜单子菜单，字段有 id parentid text，如果使用 oracle可用递归查询。</p>
+<p>登录后session获取，使用@context注解，注入request对象获取session。</p>
+<p>redis.spring.xml 配置redis，其中可配置连接池 工厂配置 redistemplate配置 哨兵 集群或者单机模式。</p>
+<p>Postman可用于测试接口。</p>
+<p>前后端文档设计基于swagger。</p>
+<h2 id="4-前端"><a href="#4-前端" class="headerlink" title="4.前端"></a>4.前端</h2><p>  不了解前端技术，期待大家的分享。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ZhaoshanhHe.github.io.git/2020/04/22/My-First-Post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -550,7 +705,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
